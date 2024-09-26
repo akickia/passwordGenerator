@@ -1,15 +1,23 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: black;
   color: #ffffff;
   font-family: 'Inter', sans-serif;
-  box-sizing: border-box;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
   background-color: hsl(215, 28%, 17%);
-  width: 446px;
-  padding: 3.25rem;
-  margin: 4rem auto;
+  max-width: 550px;
+  padding: 1rem;
   display: grid;
   grid-template-columns: 1fr;
   gap: 2.1875rem;
@@ -25,7 +33,7 @@ body {
   margin-block-start: 0;
 }
 
-h1 {
+.info h1 {
   font-size: 40px;
   font-weight: 800;
   letter-spacing: 0.025em;
@@ -34,7 +42,7 @@ h1 {
   margin-block-end: 1rem;
 }
 
-span {
+.info span {
   color: #4adf86;
 }
 
@@ -42,8 +50,10 @@ span {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
+
 .actions button {
   background-color: #10b981;
   color: #ffffff;
@@ -76,9 +86,20 @@ span {
   border-radius: 6px;
   padding: 0.25rem 1rem;
 }
+
 .passwords p {
   color: #55f991;
   line-height: 32px;
   text-align: center;
   margin: 0;
+  font-size: 0.75rem;
+}
+
+@media screen and (min-width: 650px) {
+  .container {
+    padding: 3.25rem;
+  }
+  .passwords p {
+    font-size: 1rem;
+  }
 }
