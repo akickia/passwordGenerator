@@ -5,7 +5,7 @@ body {
   box-sizing: border-box;
 }
 
-.password__container {
+.container {
   background-color: hsl(215, 28%, 17%);
   width: 446px;
   padding: 3.25rem;
@@ -15,12 +15,12 @@ body {
   gap: 2.1875rem;
 }
 
-.password__info {
+.info {
   font-size: 1.25rem;
   line-height: 28px;
 }
 
-.password__info p {
+.info p {
   color: #d5d4d8;
   margin-block-start: 0;
 }
@@ -38,7 +38,13 @@ span {
   color: #4adf86;
 }
 
-button {
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.actions button {
   background-color: #10b981;
   color: #ffffff;
   padding: 0.5625rem 0.9375rem;
@@ -47,26 +53,32 @@ button {
   font-size: 1rem;
   border: none;
   border-radius: 6px;
-  width: fit-content;
 }
 
-.password__passwords {
+.actions input {
+  width: 40px;
+  height: 20px;
+}
+
+.passwords {
   padding: 2.1875rem 0;
   border-top: 1px solid #2f3e53;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-.password__passwords div {
-  width: 211px;
+.passwords div {
+  min-width: 180px;
   min-height: 2.5rem;
   background-color: #273549;
   border-radius: 6px;
+  padding: 0.25rem 1rem;
 }
-.password__passwords p {
+.passwords p {
   color: #55f991;
   line-height: 32px;
   text-align: center;
   margin: 0;
-  padding-block: 0.25rem;
 }

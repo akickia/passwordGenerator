@@ -14,13 +14,19 @@
     <title>Password generator</title>
   </head>
   <body>
-    <article class="password__container">
-      <section class="password__info">
+    <article class="container">
+      <section class="info">
         <h1>Generate a <span>random password</span></h1>
         <p>Never use an insecure password again.</p>
       </section>
-      <button onclick="generatePassword()">Generate passwords</button>
-      <section class="password__passwords">
+      <section class="actions">
+        <button onclick="generatePassword()">Generate passwords</button>
+        <div>
+          <label for="char"><small>Change password length</small></label>
+          <input type="number" value="15" id="char" min="8" max="40" />
+        </div>
+      </section>
+      <section class="passwords">
         <div><p id="pwOne"></p></div>
         <div><p id="pwTwo"></p></div>
       </section>

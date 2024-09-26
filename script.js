@@ -92,6 +92,8 @@ const characters = [
   '/',
 ];
 
+let noChar = 15;
+
 function generateRandomIndex() {
   return Math.floor(Math.random() * characters.length);
 }
@@ -99,10 +101,16 @@ function generateRandomIndex() {
 function generatePassword() {
   let passwordOne = '';
   let passwordTwo = '';
-  for (let i = 0; i < 15; i++) {
+  for (let i = 0; i < noChar; i++) {
     passwordOne += characters[generateRandomIndex()];
     passwordTwo += characters[generateRandomIndex()];
   }
   document.getElementById('pwOne').textContent = passwordOne;
   document.getElementById('pwTwo').textContent = passwordTwo;
 }
+
+const inputEl = document.getElementById('char');
+
+inputEl.addEventListener('change', (event) => {
+  noChar = event.target.value;
+});
