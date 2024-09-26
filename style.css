@@ -95,6 +95,10 @@ body {
   font-size: 0.75rem;
 }
 
+button:hover {
+  transform: scale(1.05);
+}
+
 @media screen and (min-width: 650px) {
   .container {
     padding: 3.25rem;

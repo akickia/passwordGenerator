@@ -97,6 +97,8 @@ let noChar = 15;
 function generateRandomIndex() {
   return Math.floor(Math.random() * characters.length);
 }
+const pwOneEl = document.getElementById('pwOne');
+const pwTwoEl = document.getElementById('pwTwo');
 
 function generatePassword() {
   let passwordOne = '';
@@ -105,12 +107,23 @@ function generatePassword() {
     passwordOne += characters[generateRandomIndex()];
     passwordTwo += characters[generateRandomIndex()];
   }
-  document.getElementById('pwOne').textContent = passwordOne;
-  document.getElementById('pwTwo').textContent = passwordTwo;
+
+  pwOneEl.textContent = passwordOne;
+  pwTwoEl.textContent = passwordTwo;
 }
 
 const inputEl = document.getElementById('char');
 
 inputEl.addEventListener('change', (event) => {
   noChar = event.target.value;
+});
+
+pwOneEl.addEventListener('click', () => {
+  navigator.clipboard.writeText(pwOneEl.innerText);
+  alert('Copied password ' + pwOneEl.innerText);
+});
+
+pwTwoEl.addEventListener('click', () => {
+  navigator.clipboard.writeText(pwTwoEl.innerText);
+  alert('Copied password ' + pwTwoEl.innerText);
 });
