@@ -1,3 +1,4 @@
+/* General  */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -23,6 +24,7 @@ body {
   gap: 2.1875rem;
 }
 
+/* Info section */
 .info {
   font-size: 1.25rem;
   line-height: 28px;
@@ -46,6 +48,7 @@ body {
   color: #4adf86;
 }
 
+/* Button and input section */
 .actions {
   display: flex;
   align-items: center;
@@ -65,11 +68,16 @@ body {
   border-radius: 6px;
 }
 
+.actions button:hover {
+  transform: scale(1.05);
+}
+
 .actions input {
   width: 40px;
   height: 20px;
 }
 
+/*Passwords section */
 .passwords {
   padding: 2.1875rem 0;
   border-top: 1px solid #2f3e53;
@@ -93,12 +101,10 @@ body {
   text-align: center;
   margin: 0;
   font-size: 0.75rem;
+  cursor: pointer;
 }
 
-button:hover {
-  transform: scale(1.05);
-}
-
+/*Media queries*/
 @media screen and (min-width: 650px) {
   .container {
     padding: 3.25rem;

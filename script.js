@@ -92,32 +92,36 @@ const characters = [
   '/',
 ];
 
+//Number of characters as default
 let noChar = 15;
+//Elements
+const pwOneEl = document.getElementById('pwOne');
+const pwTwoEl = document.getElementById('pwTwo');
+const inputEl = document.getElementById('char');
 
+//Functions
 function generateRandomIndex() {
   return Math.floor(Math.random() * characters.length);
 }
-const pwOneEl = document.getElementById('pwOne');
-const pwTwoEl = document.getElementById('pwTwo');
 
 function generatePassword() {
   let passwordOne = '';
   let passwordTwo = '';
+  //loop through noChar to set all random characters
   for (let i = 0; i < noChar; i++) {
     passwordOne += characters[generateRandomIndex()];
     passwordTwo += characters[generateRandomIndex()];
   }
-
   pwOneEl.textContent = passwordOne;
   pwTwoEl.textContent = passwordTwo;
 }
 
-const inputEl = document.getElementById('char');
-
+//Eventlisteners
 inputEl.addEventListener('change', (event) => {
   noChar = event.target.value;
 });
 
+//Copy on click
 pwOneEl.addEventListener('click', () => {
   navigator.clipboard.writeText(pwOneEl.innerText);
   alert('Copied password ' + pwOneEl.innerText);
